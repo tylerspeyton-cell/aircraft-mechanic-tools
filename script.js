@@ -41,10 +41,10 @@
 
 /* ---- Site Navigation Search ---- */
 (function initSiteNavSearch() {
-  const navInner = document.querySelector('.nav-inner');
-  const navToggle = document.getElementById('navToggle');
-  const navMobile = document.getElementById('navMobile');
-  if (!navInner) return;
+  const searchInput = document.getElementById('siteSearch');
+  const searchResults = document.getElementById('siteSearchResults');
+  const searchWrap = searchInput && searchInput.closest('.nav-search');
+  if (!searchInput || !searchResults) return;
 
   const PAGES = [
     { href: 'index.html', title: 'Home' },
@@ -72,20 +72,6 @@
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const searchablePages = PAGES.filter(page => page.href !== currentPage);
 
-  const searchWrap = document.createElement('div');
-  searchWrap.className = 'nav-search';
-
-  const searchInput = document.createElement('input');
-  searchInput.type = 'search';
-  searchInput.className = 'nav-search-input';
-  searchInput.setAttribute('aria-label', 'Search site pages');
-  searchInput.setAttribute('placeholder', 'Search pages...');
-  searchInput.setAttribute('autocomplete', 'off');
-
-  const searchResults = document.createElement('div');
-  searchResults.className = 'nav-search-results';
-  searchResults.hidden = true;
-
   function hideResults() {
     searchResults.hidden = true;
     searchResults.innerHTML = '';
@@ -93,38 +79,28 @@
 
   function renderResults(query) {
     const q = query.toLowerCase().trim();
-    if (!q) {
-      hideResults();
-      return;
-    }
+    if (!q) { hideResults(); return; }
 
-    const matches = searchablePages.filter(page => {
-      return page.title.toLowerCase().includes(q) || page.href.toLowerCase().includes(q);
-    }).slice(0, 8);
+    const matches = searchablePages.filter(page =>
+      page.title.toLowerCase().includes(q) || page.href.toLowerCase().includes(q)
+    ).slice(0, 8);
 
     if (!matches.length) {
       searchResults.innerHTML = '<div class="nav-search-empty">No pages found</div>';
-      searchResults.hidden = false;
-      return;
+    } else {
+      searchResults.innerHTML = matches.map(page =>
+        `<a class="nav-search-result" href="${page.href}">${page.title}</a>`
+      ).join('');
     }
-
-    searchResults.innerHTML = matches.map(page =>
-      `<a class="nav-search-result" href="${page.href}">${page.title}</a>`
-    ).join('');
     searchResults.hidden = false;
   }
 
-  searchInput.addEventListener('input', function () {
-    renderResults(searchInput.value);
-  });
+  searchInput.addEventListener('input', function () { renderResults(searchInput.value); });
 
   searchInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-      const firstResult = searchResults.querySelector('.nav-search-result');
-      if (firstResult) {
-        event.preventDefault();
-        window.location.href = firstResult.getAttribute('href');
-      }
+      const first = searchResults.querySelector('.nav-search-result');
+      if (first) { event.preventDefault(); window.location.href = first.getAttribute('href'); }
     } else if (event.key === 'Escape') {
       hideResults();
       searchInput.blur();
@@ -132,37 +108,8 @@
   });
 
   document.addEventListener('click', function (event) {
-    if (!searchWrap.contains(event.target)) {
-      hideResults();
-    }
+    if (searchWrap && !searchWrap.contains(event.target)) hideResults();
   });
-
-  searchWrap.appendChild(searchInput);
-  searchWrap.appendChild(searchResults);
-  navInner.insertBefore(searchWrap, navToggle || null);
-
-  if (navMobile) {
-    const mobileSearchWrap = document.createElement('div');
-    mobileSearchWrap.className = 'nav-mobile-search-wrap';
-
-    const mobileSearchInput = document.createElement('input');
-    mobileSearchInput.type = 'search';
-    mobileSearchInput.className = 'nav-mobile-search-input';
-    mobileSearchInput.setAttribute('aria-label', 'Search menu links');
-    mobileSearchInput.setAttribute('placeholder', 'Search menu...');
-    mobileSearchInput.setAttribute('autocomplete', 'off');
-
-    mobileSearchWrap.appendChild(mobileSearchInput);
-    navMobile.insertBefore(mobileSearchWrap, navMobile.firstChild);
-
-    mobileSearchInput.addEventListener('input', function () {
-      const query = mobileSearchInput.value.toLowerCase().trim();
-      navMobile.querySelectorAll('a').forEach(link => {
-        const text = (link.textContent || '').toLowerCase();
-        link.style.display = !query || text.includes(query) ? '' : 'none';
-      });
-    });
-  }
 })();
 
 
