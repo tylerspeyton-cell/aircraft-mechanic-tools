@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Torque Conversion Guide for Aviation Maintenance – Aircraft Mechanic Tools</title>
+  <meta name="description" content="How to convert torque units in aircraft maintenance. In-lb to ft-lb, ft-lb to N·m, torque wrench extension corrections, and common mistakes AMTs make with torque." />
+  <meta name="keywords" content="torque conversion aviation, in-lb to ft-lb, ft-lb to newton meters, aircraft torque converter, torque wrench extension formula, aviation torque guide" />
+  <link rel="canonical" href="https://aircraftmechanictools.com/blog-torque-conversion.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈</text></svg>" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1087616286755901" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    .article-body { max-width: 820px; margin: 0 auto; }
+    .article-body h2 { margin: 36px 0 14px; font-size: 1.4rem; }
+    .article-body h3 { margin: 28px 0 12px; font-size: 1.1rem; color: var(--accent); }
+    .article-body p  { margin-bottom: 16px; color: var(--text-secondary); line-height: 1.8; }
+    .article-body ul { margin: 0 0 16px 20px; list-style: disc; }
+    .article-body ul li { color: var(--text-secondary); margin-bottom: 8px; line-height: 1.7; }
+    .article-body strong { color: var(--text-primary); }
+    .article-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .article-meta span { font-size: 0.8rem; color: var(--text-muted); }
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .callout p { margin: 0; color: var(--text-primary); font-size: 0.9rem; }
+    .warning {
+      background: rgba(240,136,62,0.1);
+      border-left: 3px solid var(--accent-orange);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .warning p { margin: 0; color: var(--text-primary); font-size: 0.9rem; }
+    .formula-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--text-primary);
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">✈</div>
+      <span>Aircraft <span>Mechanic</span> Tools</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="drill-chart.html">Drill Chart</a></li>
+      <li><a href="torque-converter.html">Torque</a></li>
+      <li><a href="unit-converter.html">Units</a></li>
+      <li><a href="ata-lookup.html">ATA Codes</a></li>
+      <li><a href="safety-wire.html">Safety Wire</a></li>
+      <li><a href="hardware-reference.html">Hardware</a></li>
+      <li><a href="conversions.html">Quick Ref</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="drill-chart.html">🔩 Drill Bit Chart</a>
+    <a href="torque-converter.html">🔧 Torque Converter</a>
+    <a href="unit-converter.html">📐 Unit Converter</a>
+    <a href="ata-lookup.html">📋 ATA Code Lookup</a>
+    <a href="safety-wire.html">🔗 Safety Wire Guide</a>
+    <a href="hardware-reference.html">⚙️ Hardware Reference</a>
+    <a href="rivet-reference.html">🔘 Rivet Sizes</a>
+    <a href="wire-gauge.html">⚡ Wire Gauge</a>
+    <a href="conversions.html">📊 Quick Reference</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="ad-wrap container" style="padding-top:12px;">
+    <div class="ad-placeholder ad-leaderboard">
+      <div>Ad Space – Header Leaderboard</div>
+      <div class="ad-label">Replace with AdSense code</div>
+    </div>
+  </div>
+
+  <article style="padding: 36px 0 64px;">
+    <div class="container article-body">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="index.html#blog">Articles</a>
+        <span class="sep">›</span>
+        <span>Torque Conversion Guide</span>
+      </nav>
+
+      <div style="margin-top: 20px;">
+        <span class="blog-tag">Torque</span>
+      </div>
+
+      <h1 style="margin-top: 16px; margin-bottom: 12px;">Torque Conversion Guide for Aviation Maintenance</h1>
+
+      <div class="article-meta">
+        <span>📅 January 2024</span>
+        <span>⏱ 7 min read</span>
+        <span>✍️ Aircraft Mechanic Tools</span>
+      </div>
+
+      <p>
+        Torque is one of the most critical values in aircraft maintenance. Under-torque a fastener and it can back out
+        in flight. Over-torque it and you risk thread stripping, bolt failure, or structural damage. Getting it right
+        every time means knowing how to convert between the units your AMM uses and the wrench in your hand.
+      </p>
+      <p>
+        This guide covers every torque unit conversion an AMT will encounter on the job, plus the torque wrench
+        extension correction formula that every mechanic should have memorized.
+      </p>
+
+      <div class="ad-wrap">
+        <div class="ad-placeholder ad-in-content">
+          <div>Ad Space – In-Content</div>
+          <div class="ad-label">Replace with AdSense code</div>
+        </div>
+      </div>
+
+      <h2>The Four Torque Units You'll See in Aviation</h2>
+
+      <h3>Inch-Pounds (in·lb)</h3>
+      <p>
+        The most common unit in US aviation documentation. Used for smaller fasteners, avionics hardware,
+        and most general airframe work. When an AMM says "torque to 85 in·lb," that's a moderate torque for
+        a small bolt — roughly equivalent to tightening a bolt firmly by hand and then a bit more.
+      </p>
+
+      <h3>Foot-Pounds (ft·lb)</h3>
+      <p>
+        Used for larger fasteners — engine mounts, landing gear hardware, structural bolts. The conversion
+        is exact and simple: <strong>1 ft·lb = 12 in·lb</strong>. This is the single most used conversion
+        in US aviation maintenance. Memorize it.
+      </p>
+
+      <h3>Newton-Meters (N·m)</h3>
+      <p>
+        The SI unit for torque. Airbus documentation uses N·m almost exclusively. Many European-manufactured
+        components and modern engine manuals also use N·m. If you work on Airbus aircraft or international
+        fleets, you'll need to convert often.
+      </p>
+
+      <h3>Kilogram-centimeters (kg·cm)</h3>
+      <p>
+        Less common today but still appears in older Japanese and European documentation, and some legacy
+        engine CMMs. You may see it on older hydraulic component manuals.
+      </p>
+
+      <h2>The Key Conversion Factors</h2>
+
+      <div class="formula-box">
+        1 ft·lb  = 12 in·lb (exact)<br/>
+        1 ft·lb  = 1.35582 N·m<br/>
+        1 N·m    = 0.7376 ft·lb<br/>
+        1 N·m    = 8.8507 in·lb<br/>
+        1 in·lb  = 0.11299 N·m<br/>
+        1 kg·cm  = 0.0981 N·m<br/>
+        1 ft·lb  = 13.825 kg·cm
+      </div>
+
+      <div class="callout">
+        <p>🔧 Use our <a href="torque-converter.html"><strong>free torque converter</strong></a> to convert any value instantly without doing the math by hand.</p>
+      </div>
+
+      <h2>Common Quick Conversions</h2>
+
+      <div class="table-wrap" style="margin: 20px 0;">
+        <table>
+          <thead>
+            <tr><th>in·lb</th><th>ft·lb</th><th>N·m</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>12</td><td>1.0</td><td>1.36</td></tr>
+            <tr><td>25</td><td>2.08</td><td>2.82</td></tr>
+            <tr><td>50</td><td>4.17</td><td>5.65</td></tr>
+            <tr><td>75</td><td>6.25</td><td>8.47</td></tr>
+            <tr><td>100</td><td>8.33</td><td>11.30</td></tr>
+            <tr><td>120</td><td>10.0</td><td>13.56</td></tr>
+            <tr><td>150</td><td>12.5</td><td>16.95</td></tr>
+            <tr><td>200</td><td>16.67</td><td>22.60</td></tr>
+            <tr><td>240</td><td>20.0</td><td>27.12</td></tr>
+            <tr><td>300</td><td>25.0</td><td>33.90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ad-wrap">
+        <div class="ad-placeholder ad-in-content">
+          <div>Ad Space – In-Content (second)</div>
+          <div class="ad-label">Replace with AdSense code</div>
+        </div>
+      </div>
+
+      <h2>Torque Wrench Extension Correction Formula</h2>
+
+      <p>
+        This is one of the most important formulas in all of aircraft maintenance, and one of the most commonly
+        misapplied. When you use a crow's foot, open-end adapter, or any extension on a torque wrench,
+        the reading on the wrench is <strong>not</strong> the actual torque applied to the fastener.
+        You must correct for the added length.
+      </p>
+
+      <div class="formula-box">
+        TW = (TS × L) ÷ (L + E)
+      </div>
+
+      <ul>
+        <li><strong>TW</strong> = Torque Wrench reading (what you set the wrench to)</li>
+        <li><strong>TS</strong> = Target torque (what the AMM specifies)</li>
+        <li><strong>L</strong> = Effective length of the torque wrench (from drive to handle center)</li>
+        <li><strong>E</strong> = Extension length (from drive to center of the fitting)</li>
+      </ul>
+
+      <p><strong>Example:</strong> AMM calls for 100 in·lb. Your wrench is 10 inches long. Your crow's foot adds 2 inches.</p>
+      <div class="formula-box">
+        TW = (100 × 10) ÷ (10 + 2) = 1000 ÷ 12 = <strong>83.3 in·lb</strong>
+      </div>
+      <p>You set your wrench to 83.3 in·lb — when it clicks, the actual torque on the fastener is 100 in·lb.</p>
+
+      <div class="warning">
+        <p>⚠️ <strong>Important:</strong> This formula only applies when the extension is in line with the wrench. If the crow's foot is offset at an angle, the calculation changes. When in doubt, check your AMM or consult your inspector.</p>
+      </div>
+
+      <h2>Wet vs. Dry Torque</h2>
+      <p>
+        Always check whether your AMM specifies <strong>wet torque</strong> (with lubricant applied to the threads)
+        or <strong>dry torque</strong> (clean, unlubricated threads). The difference matters significantly —
+        a lubricated fastener can reach much higher clamp load at the same torque value compared to a dry one.
+        Applying dry torque specs to a lubricated fastener results in over-torque and potential thread damage.
+      </p>
+      <p>
+        Common lubricants that affect torque: anti-seize compound, engine oil, hydraulic fluid, and
+        thread-locking compounds. If the AMM doesn't specify, ask your supervisor or check the general
+        torque practices section (usually ATA Chapter 20) of your aircraft's maintenance manual.
+      </p>
+
+      <h2>Torque Wrench Best Practices</h2>
+      <ul>
+        <li>Use your wrench within <strong>20–80% of its rated range</strong> for best accuracy</li>
+        <li>Always <strong>calibrate before critical work</strong> — most shops require annual calibration minimum</li>
+        <li>Release the tension setting when storing a click-type wrench — leaving it loaded weakens the spring</li>
+        <li>Pull smoothly and steadily — jerking the wrench adds overshoot</li>
+        <li>Apply torque in the <strong>tightening direction only</strong> — don't use a torque wrench to loosen fasteners</li>
+        <li>Record the torque wrench serial number and calibration date on your work card when required</li>
+      </ul>
+
+      <div class="callout">
+        <p>🔧 Need to convert right now? Our <a href="torque-converter.html"><strong>torque converter</strong></a> handles all units instantly and works on mobile in the hangar.</p>
+      </div>
+
+      <!-- Related articles -->
+      <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+        <h2 style="margin-bottom: 20px;">Related Articles</h2>
+        <div class="blog-grid">
+          <a href="blog-drill-bit-size-chart.html" class="blog-card" style="text-decoration:none; color:inherit;">
+            <span class="blog-tag">Reference</span>
+            <h3 style="margin-top:8px;">Drill Bit Size Chart for Aircraft Mechanics</h3>
+            <p>Complete guide to number, letter, and fraction drill sizes.</p>
+          </a>
+          <a href="blog-ata-codes.html" class="blog-card" style="text-decoration:none; color:inherit;">
+            <span class="blog-tag">ATA Codes</span>
+            <h3 style="margin-top:8px;">ATA Codes Every Aviation Mechanic Should Know</h3>
+            <p>A practical breakdown of the ATA chapter system.</p>
+          </a>
+          <a href="blog-safety-wire-guide.html" class="blog-card" style="text-decoration:none; color:inherit;">
+            <span class="blog-tag">Safety Wire</span>
+            <h3 style="margin-top:8px;">Safety Wire Size Selection Guide for AMTs</h3>
+            <p>How to choose the right safety wire gauge for any application.</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container ad-wrap">
+    <div class="ad-placeholder ad-banner">
+      <div>Ad Space – Footer Banner</div>
+      <div class="ad-label">Replace with AdSense footer unit</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:20px;">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Always verify torque values in your aircraft's current approved AMM. © 2024 Aircraft Mechanic Tools.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

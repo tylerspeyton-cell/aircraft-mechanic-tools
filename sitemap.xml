@@ -51,6 +51,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aircraftmechanictools.com/blog-drill-bit-size-chart.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aircraftmechanictools.com/blog-torque-conversion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aircraftmechanictools.com/blog-ata-codes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aircraftmechanictools.com/blog-safety-wire-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aircraftmechanictools.com/disclaimer.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
