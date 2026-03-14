@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2f81f7"/>
+      <stop offset="100%" style="stop-color:#1a5fb4"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2f81f7;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#2f81f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge background -->
+  <rect x="0" y="4" width="38" height="32" rx="6" fill="url(#bg)"/>
+
+  <!-- Plane body -->
+  <g transform="translate(4, 8)">
+    <!-- Fuselage -->
+    <path d="M6 12 L24 8 L28 12 L24 16 L6 12Z" fill="white" opacity="0.95"/>
+    <!-- Nose -->
+    <path d="M24 8 L30 12 L24 16Z" fill="white"/>
+    <!-- Wing -->
+    <path d="M10 12 L18 4 L22 4 L16 12Z" fill="white" opacity="0.8"/>
+    <!-- Tail wing -->
+    <path d="M6 12 L9 6 L12 6 L10 12Z" fill="white" opacity="0.7"/>
+    <!-- Tail fin -->
+    <path d="M6 12 L9 17 L12 17 L10 12Z" fill="white" opacity="0.6"/>
+    <!-- Engine -->
+    <rect x="13" y="13" width="7" height="3" rx="1.5" fill="#f0883e"/>
+  </g>
+
+  <!-- AMT text -->
+  <text x="45" y="27" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800" fill="white" letter-spacing="1">AMT</text>
+
+  <!-- Accent underline -->
+  <rect x="45" y="31" width="34" height="2" rx="1" fill="#f0883e"/>
+</svg>
