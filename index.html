@@ -289,6 +289,66 @@
   <hr class="section-divider" />
 
   <!-- ============================================================
+       FEEDBACK / SUGGESTIONS SECTION
+       ============================================================ -->
+  <section class="feedback-section" aria-labelledby="feedback-heading">
+    <div class="container">
+      <div class="feedback-inner">
+        <div class="feedback-header">
+          <span class="feedback-icon">💬</span>
+          <h2 id="feedback-heading">Help Us Build Better Tools</h2>
+          <p>
+            We appreciate your feedback in making this website valuable for all mechanics.
+            Tell us what tools, charts, or references you'd like to see added — this site
+            is built for AMTs, by AMTs.
+          </p>
+        </div>
+
+        <!-- SUCCESS MESSAGE (hidden by default) -->
+        <div class="feedback-success" id="feedbackSuccess" style="display:none;">
+          <span>✅</span>
+          <strong>Thanks for your feedback!</strong> We read every suggestion and use them to prioritize new tools.
+        </div>
+
+        <form
+          class="feedback-form"
+          id="feedbackForm"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+          <!-- NOTE FOR TYLER: Go to https://formspree.io, sign up free, create a form,
+               and replace YOUR_FORM_ID above with the ID they give you (looks like xpwzabcd).
+               Your form submissions will be emailed to you. Free tier = 50/month. -->
+
+          <div class="feedback-fields">
+            <div class="feedback-field">
+              <label for="mechName">Your Name <span class="optional">(optional)</span></label>
+              <input type="text" id="mechName" name="name" placeholder="e.g. Mike, AMT since 2012" autocomplete="off" />
+            </div>
+
+            <div class="feedback-field feedback-field--full">
+              <label for="mechSuggestion">What would you like us to add or improve? <span class="required">*</span></label>
+              <textarea
+                id="mechSuggestion"
+                name="suggestion"
+                rows="4"
+                placeholder="Example: A tap and die thread chart, a fluid oz to ml converter, a printable oil change log..."
+                required
+              ></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="AMT Tools – Mechanic Feedback" />
+          </div>
+
+          <button type="submit" class="btn feedback-btn">Send Feedback →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ============================================================
        BLOG / ARTICLES SECTION
        ============================================================ -->
   <section class="blog-section" aria-labelledby="blog-heading">
@@ -403,5 +463,35 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // Feedback form — AJAX submit so user stays on page
+  const feedbackForm = document.getElementById('feedbackForm');
+  const feedbackSuccess = document.getElementById('feedbackSuccess');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = feedbackForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: new FormData(feedbackForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          feedbackForm.style.display = 'none';
+          feedbackSuccess.style.display = 'flex';
+        } else {
+          btn.textContent = 'Error — try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Error — try again';
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
 </body>
 </html>

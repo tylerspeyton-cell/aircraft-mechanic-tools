@@ -913,3 +913,146 @@ tbody td.text { font-family: var(--font-main); white-space: normal; }
   .tool-panel { padding: 20px; }
   .result-card-value { font-size: 1.25rem; }
 }
+
+/* ============================================================
+   FEEDBACK / SUGGESTIONS SECTION
+   ============================================================ */
+
+.feedback-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.feedback-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.feedback-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.feedback-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.feedback-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.65;
+}
+
+.feedback-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: left;
+}
+
+.feedback-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.feedback-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feedback-field--full {
+  grid-column: 1 / -1;
+}
+
+.feedback-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.feedback-field .optional {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.feedback-field .required {
+  color: var(--accent-orange);
+}
+
+.feedback-field input,
+.feedback-field textarea {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+.feedback-field textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+.feedback-field input:focus,
+.feedback-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.feedback-field input::placeholder,
+.feedback-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.feedback-btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.feedback-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(63, 185, 80, 0.1);
+  border: 1px solid var(--accent-green);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  font-size: 0.95rem;
+  color: var(--accent-green);
+  margin-top: 8px;
+}
+
+.feedback-success span {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .feedback-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+}
