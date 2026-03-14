@@ -876,6 +876,235 @@ tbody td.text { font-family: var(--font-main); white-space: normal; }
 .mb-lg  { margin-bottom: 32px; }
 .hidden { display: none !important; }
 
+/* ---- Printable Worksheets / Checklists ---- */
+.print-hide {}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+
+.note-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.note-card p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.plain-list {
+  list-style: disc;
+  padding-left: 18px;
+  color: var(--text-secondary);
+}
+
+.plain-list li {
+  margin-bottom: 8px;
+}
+
+.print-sheet {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sheet-title-block h2 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.sheet-title-block p {
+  font-size: 0.9rem;
+}
+
+.sheet-meta-grid {
+  flex: 1;
+  min-width: 280px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.meta-line,
+.signature-line {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-line span,
+.signature-line span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.meta-line strong,
+.signature-line strong {
+  min-height: 32px;
+  border-bottom: 1px solid var(--border-light);
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.worksheet-table tbody td {
+  height: 46px;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.checklist-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  padding: 18px;
+}
+
+.checklist-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checklist-list li {
+  display: flex;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 3px;
+  flex: 0 0 16px;
+  margin-top: 2px;
+}
+
+.notes-block {
+  margin-top: 16px;
+}
+
+.note-line {
+  border-bottom: 1px solid var(--border-light);
+  height: 28px;
+}
+
+@media print {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #ffffff;
+    --border: #d0d7de;
+    --border-light: #8c959f;
+    --text-primary: #111111;
+    --text-secondary: #333333;
+    --text-muted: #555555;
+    --accent: #111111;
+    --accent-hover: #111111;
+    --accent-light: rgba(0, 0, 0, 0.03);
+  }
+
+  body {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .print-hide,
+  .site-nav,
+  .site-footer,
+  .ad-wrap,
+  .ad-wrap--section,
+  .btn-group {
+    display: none !important;
+  }
+
+  .page-header {
+    padding: 0 0 16px;
+    margin-bottom: 16px;
+    border-bottom-color: #d0d7de;
+  }
+
+  .page-header .breadcrumb {
+    display: none;
+  }
+
+  .table-wrap,
+  .print-sheet,
+  .note-card,
+  .checklist-card,
+  .tool-panel {
+    border-color: #d0d7de;
+    box-shadow: none;
+    background: #ffffff;
+  }
+
+  thead {
+    position: static;
+  }
+
+  table,
+  th,
+  td,
+  p,
+  li,
+  span,
+  strong,
+  h1,
+  h2,
+  h3 {
+    color: #111111 !important;
+  }
+
+  .checkbox {
+    border-color: #111111;
+  }
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -898,6 +1127,7 @@ tbody td.text { font-family: var(--font-main); white-space: normal; }
   .result-grid { grid-template-columns: 1fr 1fr; }
   .ref-cards { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
+  .sheet-meta-grid { grid-template-columns: 1fr; }
 
   .hero { padding: 36px 0 28px; }
 
@@ -909,6 +1139,8 @@ tbody td.text { font-family: var(--font-main); white-space: normal; }
   .tool-grid { grid-template-columns: 1fr; }
   .result-grid { grid-template-columns: 1fr; }
   .affiliate-grid { grid-template-columns: 1fr; }
+  .print-sheet,
+  .note-card { padding: 18px; }
 
   .tool-panel { padding: 20px; }
   .result-card-value { font-size: 1.25rem; }
