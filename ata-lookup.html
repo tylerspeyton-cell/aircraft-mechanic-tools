@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATA Chapter Code Lookup – Aircraft Mechanic Tools</title>
+  <meta name="description" content="Searchable ATA 100 chapter code reference for aviation maintenance technicians. Find ATA codes, chapter descriptions, and system summaries instantly." />
+  <meta name="keywords" content="ATA chapter codes, ATA 100 reference, aviation ATA codes, aircraft maintenance ATA, ATA code lookup, ATA chapter list" />
+  <link rel="canonical" href="https://yourdomain.com/ata-lookup.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1087616286755901" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">✈</div>
+      <span>Aircraft <span>Mechanic</span> Tools</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="drill-chart.html">Drill Chart</a></li>
+      <li><a href="torque-converter.html">Torque</a></li>
+      <li><a href="unit-converter.html">Units</a></li>
+      <li><a href="ata-lookup.html" class="active">ATA Codes</a></li>
+      <li><a href="safety-wire.html">Safety Wire</a></li>
+      <li><a href="hardware-reference.html">Hardware</a></li>
+      <li><a href="conversions.html">Quick Ref</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="drill-chart.html">🔩 Drill Bit Chart</a>
+    <a href="torque-converter.html">🔧 Torque Converter</a>
+    <a href="unit-converter.html">📐 Unit Converter</a>
+    <a href="ata-lookup.html">📋 ATA Code Lookup</a>
+    <a href="safety-wire.html">🔗 Safety Wire Guide</a>
+    <a href="hardware-reference.html">⚙️ Hardware Reference</a>
+    <a href="rivet-reference.html">🔘 Rivet Sizes</a>
+    <a href="wire-gauge.html">⚡ Wire Gauge</a>
+    <a href="conversions.html">📊 Quick Reference</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="ad-wrap container" style="padding-top:12px;">
+    <div class="ad-placeholder ad-leaderboard">
+      <div>Ad Space – Header Leaderboard</div>
+      <div class="ad-label">Replace with AdSense code</div>
+    </div>
+  </div>
+
+  <header class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span>ATA Code Lookup</span>
+      </nav>
+      <h1>📋 ATA Chapter Code Lookup</h1>
+      <p>Search the standard ATA 100 / iSpec 2200 chapter reference. Used for work orders, maintenance logs, and technical documentation across commercial and general aviation.</p>
+    </div>
+  </header>
+
+  <section style="padding: 0 0 48px;">
+    <div class="container">
+
+      <div class="search-bar">
+        <input
+          type="search"
+          id="ataSearch"
+          placeholder="Search by ATA number, system name, or keyword…"
+          aria-label="Search ATA chapters"
+          autocomplete="off"
+        />
+      </div>
+
+      <p class="result-count" id="ataCount" aria-live="polite">Loading…</p>
+
+      <div class="table-wrap">
+        <table id="ataTable" aria-label="ATA chapter code reference table">
+          <thead>
+            <tr>
+              <th data-col="0" scope="col" style="width:90px;">ATA Ch. <span class="sort-icon">↕</span></th>
+              <th data-col="1" scope="col">System Name <span class="sort-icon">↕</span></th>
+              <th data-col="2" scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody id="ataBody">
+            <tr><td colspan="3" class="no-results">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Ad -->
+      <div class="ad-wrap" style="margin-top:32px;">
+        <div class="ad-placeholder ad-in-content">
+          <div>Ad Space – In-Content</div>
+          <div class="ad-label">Replace with AdSense responsive unit</div>
+        </div>
+      </div>
+
+      <!-- About ATA section -->
+      <div style="margin-top:32px; display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:16px;">
+
+        <div class="tool-panel" style="margin:0;">
+          <h3>What are ATA Codes?</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin:0;">
+            ATA chapters (Air Transport Association) provide a standardized numbering system for aircraft systems and components.
+            Originally defined by ATA Spec 100, they are now managed under <strong>ATA iSpec 2200</strong>.
+            Every aircraft maintenance manual, service bulletin, and engineering order references these chapters.
+          </p>
+        </div>
+
+        <div class="tool-panel" style="margin:0;">
+          <h3>How to Use ATA Codes</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin:0;">
+            ATA codes appear on work orders, MEL items, deferred maintenance logs, and technical publications.
+            A full reference looks like <strong>ATA 32-10-00</strong> where 32 = chapter (Landing Gear),
+            10 = section (Main Gear), and 00 = subject (General). This site covers chapter-level references.
+          </p>
+        </div>
+
+        <div class="tool-panel" style="margin:0;">
+          <h3>Common ATA Chapters</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin:0;">
+            The most frequently referenced chapters in line maintenance are:
+            <strong>ATA 24</strong> (Electrical), <strong>ATA 27</strong> (Flight Controls),
+            <strong>ATA 28</strong> (Fuel), <strong>ATA 29</strong> (Hydraulics),
+            <strong>ATA 32</strong> (Landing Gear), <strong>ATA 34</strong> (Navigation),
+            <strong>ATA 71–80</strong> (Powerplant systems).
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container ad-wrap">
+    <div class="ad-placeholder ad-banner">
+      <div>Ad Space – Footer Banner</div>
+      <div class="ad-label">Replace with AdSense footer unit</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:20px;">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> ATA chapter descriptions on this site are simplified reference summaries only. Always use your aircraft's current AMM and approved technical documentation. © 2024 Aircraft Mechanic Tools.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

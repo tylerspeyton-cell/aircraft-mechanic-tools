@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Torque Converter for Aviation Mechanics – Aircraft Mechanic Tools</title>
+  <meta name="description" content="Free torque unit converter for aircraft mechanics. Convert between inch-pounds, foot-pounds, Newton-meters, kg-cm, and kg-m instantly." />
+  <meta name="keywords" content="torque converter, inch pounds to foot pounds, in-lb to ft-lb, newton meter converter, aviation torque, aircraft torque conversion" />
+  <link rel="canonical" href="https://yourdomain.com/torque-converter.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1087616286755901" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">✈</div>
+      <span>Aircraft <span>Mechanic</span> Tools</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="drill-chart.html">Drill Chart</a></li>
+      <li><a href="torque-converter.html" class="active">Torque</a></li>
+      <li><a href="unit-converter.html">Units</a></li>
+      <li><a href="ata-lookup.html">ATA Codes</a></li>
+      <li><a href="safety-wire.html">Safety Wire</a></li>
+      <li><a href="hardware-reference.html">Hardware</a></li>
+      <li><a href="conversions.html">Quick Ref</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="drill-chart.html">🔩 Drill Bit Chart</a>
+    <a href="torque-converter.html">🔧 Torque Converter</a>
+    <a href="unit-converter.html">📐 Unit Converter</a>
+    <a href="ata-lookup.html">📋 ATA Code Lookup</a>
+    <a href="safety-wire.html">🔗 Safety Wire Guide</a>
+    <a href="hardware-reference.html">⚙️ Hardware Reference</a>
+    <a href="rivet-reference.html">🔘 Rivet Sizes</a>
+    <a href="wire-gauge.html">⚡ Wire Gauge</a>
+    <a href="conversions.html">📊 Quick Reference</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="ad-wrap container" style="padding-top:12px;">
+    <div class="ad-placeholder ad-leaderboard">
+      <div>Ad Space – Header Leaderboard</div>
+      <div class="ad-label">Replace with AdSense code</div>
+    </div>
+  </div>
+
+  <header class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span>Torque Converter</span>
+      </nav>
+      <h1>🔧 Torque Converter</h1>
+      <p>Enter a torque value, select the unit, and all conversions update instantly. Covers in-lb, ft-lb, N·m, kg-cm, and kg-m.</p>
+    </div>
+  </header>
+
+  <section style="padding: 0 0 48px;">
+    <div class="container container--narrow">
+
+      <!-- Input panel -->
+      <div class="tool-panel">
+        <h3>Enter Torque Value</h3>
+
+        <div class="form-group">
+          <label for="torqueInput">Value</label>
+          <input
+            type="number"
+            id="torqueInput"
+            placeholder="Enter torque value…"
+            min="0"
+            step="any"
+            inputmode="decimal"
+            aria-label="Torque value to convert"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="torqueUnit">From Unit</label>
+          <select id="torqueUnit" aria-label="Select source torque unit">
+            <option value="in-lb">Inch-Pounds (in·lb)</option>
+            <option value="ft-lb" selected>Foot-Pounds (ft·lb)</option>
+            <option value="nm">Newton-Meters (N·m)</option>
+            <option value="kg-cm">Kilogram-centimeters (kg·cm)</option>
+            <option value="kg-m">Kilogram-meters (kg·m)</option>
+          </select>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="torqueClear">Clear</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-card-label">Inch-Pounds</div>
+          <div class="result-card-value torque-result" id="result-in-lb">—</div>
+          <div class="result-card-unit">in·lb</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">Foot-Pounds</div>
+          <div class="result-card-value torque-result" id="result-ft-lb">—</div>
+          <div class="result-card-unit">ft·lb</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">Newton-Meters</div>
+          <div class="result-card-value torque-result" id="result-nm">—</div>
+          <div class="result-card-unit">N·m</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">Kilogram-centimeters</div>
+          <div class="result-card-value torque-result" id="result-kg-cm">—</div>
+          <div class="result-card-unit">kg·cm</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">Kilogram-meters</div>
+          <div class="result-card-value torque-result" id="result-kg-m">—</div>
+          <div class="result-card-unit">kg·m</div>
+        </div>
+      </div>
+
+      <!-- Ad -->
+      <div class="ad-wrap" style="margin-top:32px;">
+        <div class="ad-placeholder ad-in-content">
+          <div>Ad Space – In-Content</div>
+          <div class="ad-label">Replace with AdSense responsive unit</div>
+        </div>
+      </div>
+
+      <!-- Quick Reference Table -->
+      <div style="margin-top:32px;">
+        <h2 style="margin-bottom:16px;">Quick Conversion Reference</h2>
+        <div class="table-wrap">
+          <table aria-label="Torque quick reference table">
+            <thead>
+              <tr>
+                <th scope="col">in·lb</th>
+                <th scope="col">ft·lb</th>
+                <th scope="col">N·m</th>
+                <th scope="col">kg·cm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>12</td><td>1.00</td><td>1.356</td><td>13.83</td></tr>
+              <tr><td>24</td><td>2.00</td><td>2.712</td><td>27.66</td></tr>
+              <tr><td>36</td><td>3.00</td><td>4.068</td><td>41.49</td></tr>
+              <tr><td>48</td><td>4.00</td><td>5.424</td><td>55.32</td></tr>
+              <tr><td>60</td><td>5.00</td><td>6.779</td><td>69.15</td></tr>
+              <tr><td>72</td><td>6.00</td><td>8.135</td><td>82.97</td></tr>
+              <tr><td>84</td><td>7.00</td><td>9.491</td><td>96.80</td></tr>
+              <tr><td>96</td><td>8.00</td><td>10.847</td><td>110.63</td></tr>
+              <tr><td>120</td><td>10.00</td><td>13.558</td><td>138.29</td></tr>
+              <tr><td>180</td><td>15.00</td><td>20.338</td><td>207.43</td></tr>
+              <tr><td>240</td><td>20.00</td><td>27.117</td><td>276.58</td></tr>
+              <tr><td>300</td><td>25.00</td><td>33.896</td><td>345.72</td></tr>
+              <tr><td>360</td><td>30.00</td><td>40.675</td><td>414.87</td></tr>
+              <tr><td>480</td><td>40.00</td><td>54.234</td><td>553.15</td></tr>
+              <tr><td>600</td><td>50.00</td><td>67.792</td><td>691.44</td></tr>
+              <tr><td>720</td><td>60.00</td><td>81.351</td><td>829.73</td></tr>
+              <tr><td>960</td><td>80.00</td><td>108.47</td><td>1106.31</td></tr>
+              <tr><td>1200</td><td>100.00</td><td>135.58</td><td>1382.89</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="tool-panel" style="margin-top:24px;">
+        <h3>Important Torque Notes</h3>
+        <ul style="list-style: disc; padding-left: 20px; color: var(--text-secondary); font-size:0.9rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Always verify torque values against the <strong>current approved AMM or CMM</strong> for the specific task and hardware.</li>
+          <li>Torque specs listed in maintenance documents may include <strong>wet or dry torque</strong> — verify which applies.</li>
+          <li>Use a <strong>calibrated torque wrench</strong> within its rated range (typically 20%–80% of max capacity for best accuracy).</li>
+          <li>1 ft·lb = 12 in·lb exactly. This is the most common conversion in aircraft maintenance.</li>
+          <li>N·m is the SI unit for torque. Most modern Airbus documentation uses N·m; Boeing often uses in·lb or ft·lb.</li>
+          <li>When using a <strong>torque wrench extension</strong>, you must calculate the corrected torque value — the reading on the wrench will differ from the actual applied torque.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container ad-wrap">
+    <div class="ad-placeholder ad-banner">
+      <div>Ad Space – Footer Banner</div>
+      <div class="ad-label">Replace with AdSense footer unit</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:20px;">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Torque values on this site are for reference only. Always use values from approved maintenance documentation for your specific aircraft and hardware. © 2024 Aircraft Mechanic Tools.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
