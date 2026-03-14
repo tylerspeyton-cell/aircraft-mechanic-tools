@@ -181,6 +181,87 @@ main { flex: 1; padding-top: var(--nav-height); }
 }
 .nav-mobile a:hover { color: var(--text-primary); background: var(--bg-card); }
 
+/* ---- Nav Search ---- */
+.nav-search {
+  position: relative;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.nav-search-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  width: 160px;
+  transition: border-color var(--transition), width var(--transition);
+  outline: none;
+}
+
+.nav-search-input::placeholder { color: var(--text-muted); }
+
+.nav-search-input:focus {
+  border-color: var(--accent);
+  width: 220px;
+}
+
+.nav-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  min-width: 220px;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.nav-search-result {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 9px 14px;
+  transition: all var(--transition);
+}
+
+.nav-search-result:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.nav-search-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 10px 14px;
+}
+
+/* Mobile search inside the hamburger menu */
+.nav-mobile-search-wrap {
+  padding: 8px 0 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+
+.nav-mobile-search-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  width: 100%;
+  outline: none;
+}
+
+.nav-mobile-search-input::placeholder { color: var(--text-muted); }
+.nav-mobile-search-input:focus { border-color: var(--accent); }
+
 /* ---- Ad Placeholders ---- */
 /* TO SHOW ADS: remove the display:none line below */
 /* TO HIDE ADS: keep display:none — placeholders are invisible but still in the HTML */

@@ -39,6 +39,133 @@
 })();
 
 
+/* ---- Site Navigation Search ---- */
+(function initSiteNavSearch() {
+  const navInner = document.querySelector('.nav-inner');
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  if (!navInner) return;
+
+  const PAGES = [
+    { href: 'index.html', title: 'Home' },
+    { href: 'drill-chart.html', title: 'Drill Bit Chart' },
+    { href: 'torque-converter.html', title: 'Torque Converter' },
+    { href: 'unit-converter.html', title: 'Unit Converter' },
+    { href: 'ata-lookup.html', title: 'ATA Code Lookup' },
+    { href: 'safety-wire.html', title: 'Safety Wire Guide' },
+    { href: 'hardware-reference.html', title: 'Hardware Reference' },
+    { href: 'conversions.html', title: 'Quick Reference Cards' },
+    { href: 'rivet-reference.html', title: 'Rivet Size Reference' },
+    { href: 'wire-gauge.html', title: 'Wire Gauge Reference' },
+    { href: 'o-ring-seal-reference.html', title: 'O-Ring / Seal Reference' },
+    { href: 'tire-pressure-log.html', title: 'Tire Pressure Log' },
+    { href: 'inspection-checklist.html', title: 'Inspection Checklist' },
+    { href: 'blog-drill-bit-size-chart.html', title: 'Blog: Drill Bit Size Chart' },
+    { href: 'blog-ata-codes.html', title: 'Blog: ATA Codes' },
+    { href: 'blog-safety-wire-guide.html', title: 'Blog: Safety Wire Guide' },
+    { href: 'blog-torque-conversion.html', title: 'Blog: Torque Conversion' },
+    { href: 'contact.html', title: 'Contact' },
+    { href: 'privacy.html', title: 'Privacy Policy' },
+    { href: 'disclaimer.html', title: 'Disclaimer' },
+  ];
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const searchablePages = PAGES.filter(page => page.href !== currentPage);
+
+  const searchWrap = document.createElement('div');
+  searchWrap.className = 'nav-search';
+
+  const searchInput = document.createElement('input');
+  searchInput.type = 'search';
+  searchInput.className = 'nav-search-input';
+  searchInput.setAttribute('aria-label', 'Search site pages');
+  searchInput.setAttribute('placeholder', 'Search pages...');
+  searchInput.setAttribute('autocomplete', 'off');
+
+  const searchResults = document.createElement('div');
+  searchResults.className = 'nav-search-results';
+  searchResults.hidden = true;
+
+  function hideResults() {
+    searchResults.hidden = true;
+    searchResults.innerHTML = '';
+  }
+
+  function renderResults(query) {
+    const q = query.toLowerCase().trim();
+    if (!q) {
+      hideResults();
+      return;
+    }
+
+    const matches = searchablePages.filter(page => {
+      return page.title.toLowerCase().includes(q) || page.href.toLowerCase().includes(q);
+    }).slice(0, 8);
+
+    if (!matches.length) {
+      searchResults.innerHTML = '<div class="nav-search-empty">No pages found</div>';
+      searchResults.hidden = false;
+      return;
+    }
+
+    searchResults.innerHTML = matches.map(page =>
+      `<a class="nav-search-result" href="${page.href}">${page.title}</a>`
+    ).join('');
+    searchResults.hidden = false;
+  }
+
+  searchInput.addEventListener('input', function () {
+    renderResults(searchInput.value);
+  });
+
+  searchInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      const firstResult = searchResults.querySelector('.nav-search-result');
+      if (firstResult) {
+        event.preventDefault();
+        window.location.href = firstResult.getAttribute('href');
+      }
+    } else if (event.key === 'Escape') {
+      hideResults();
+      searchInput.blur();
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!searchWrap.contains(event.target)) {
+      hideResults();
+    }
+  });
+
+  searchWrap.appendChild(searchInput);
+  searchWrap.appendChild(searchResults);
+  navInner.insertBefore(searchWrap, navToggle || null);
+
+  if (navMobile) {
+    const mobileSearchWrap = document.createElement('div');
+    mobileSearchWrap.className = 'nav-mobile-search-wrap';
+
+    const mobileSearchInput = document.createElement('input');
+    mobileSearchInput.type = 'search';
+    mobileSearchInput.className = 'nav-mobile-search-input';
+    mobileSearchInput.setAttribute('aria-label', 'Search menu links');
+    mobileSearchInput.setAttribute('placeholder', 'Search menu...');
+    mobileSearchInput.setAttribute('autocomplete', 'off');
+
+    mobileSearchWrap.appendChild(mobileSearchInput);
+    navMobile.insertBefore(mobileSearchWrap, navMobile.firstChild);
+
+    mobileSearchInput.addEventListener('input', function () {
+      const query = mobileSearchInput.value.toLowerCase().trim();
+      navMobile.querySelectorAll('a').forEach(link => {
+        const text = (link.textContent || '').toLowerCase();
+        link.style.display = !query || text.includes(query) ? '' : 'none';
+      });
+    });
+  }
+})();
+
+
 /* ================================================================
    DRILL BIT CHART
    ================================================================ */
