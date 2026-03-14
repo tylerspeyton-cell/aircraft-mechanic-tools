@@ -27,6 +27,16 @@
 })();
 
 
+/* ---- Nav Scroll Shadow ---- */
+(function initNavScroll() {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+})();
+
+
 /* ---- Active Nav Link ---- */
 (function setActiveNav() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
