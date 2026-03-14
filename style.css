@@ -4,24 +4,24 @@
 
 /* ---- CSS Custom Properties (easy to theme later) ---- */
 :root {
-  --bg-primary:    #0b0d1a;
-  --bg-secondary:  #111427;
-  --bg-card:       #181c34;
-  --bg-card-hover: #1f2440;
-  --border:        #272d50;
-  --border-light:  #343d68;
+  --bg-primary:    #111318;
+  --bg-secondary:  #191c24;
+  --bg-card:       #1e2230;
+  --bg-card-hover: #252a3a;
+  --border:        #272d4a;
+  --border-light:  #353d64;
 
-  --text-primary:   #eaeeff;
-  --text-secondary: #9da4cc;
-  --text-muted:     #7880a8;
+  --text-primary:   #e8eaf6;
+  --text-secondary: #9ba3c2;
+  --text-muted:     #8890b5;
 
-  --accent:        #38bdf8;   /* aviation sky blue */
+  --accent:        #38bdf8;   /* aviation sky blue — research-validated */
   --accent-hover:  #7dd3fc;
-  --accent-light:  rgba(56, 189, 248, 0.12);
-  --accent-orange: #fb923c;
-  --accent-green:  #34d399;
+  --accent-light:  rgba(56, 189, 248, 0.10);
+  --accent-orange: #f59e0b;   /* amber — warnings/safety only */
+  --accent-green:  #22d3ee;   /* teal — success/confirmation */
 
-  --font-main: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   --radius-sm: 6px;
@@ -45,7 +45,10 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-main);
-  line-height: 1.75;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -90,7 +93,7 @@ main { flex: 1; padding-top: var(--nav-height); }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-height);
-  background: rgba(11, 13, 26, 0.96);
+  background: rgba(17, 19, 24, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -316,7 +319,7 @@ main { flex: 1; padding-top: var(--nav-height); }
 .hero {
   padding: 80px 0 64px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(56,189,248,0.07) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(56,189,248,0.05) 0%, transparent 100%);
   border-bottom: 1px solid var(--border);
 }
 
